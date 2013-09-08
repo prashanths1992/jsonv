@@ -42,7 +42,7 @@ And an example of an error produced from failed validation with the above code l
 ```
 
 ## Documentation
-[http://godoc.org/github.com/gima/jsonv](http://godoc.org/github.com/gima/jsonv)
+[http://godoc.org/github.com/gima/jsonv/src](http://godoc.org/github.com/gima/jsonv/src)
 
 ## Greets
 Idea loosely based on [js-schema](https://github.com/molnarg/js-schema), thank you.
