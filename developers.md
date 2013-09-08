@@ -1,11 +1,25 @@
-## Run tests like this
+## Run tests and code coverage like this:
 
-1. Navigate to the cloned jsonv repository.
+1. Set GOPATH environment variable:
 
-2. Set GOPATH envvar:
+       $ export GOPATH=/path/to/your/goworkspace
 
-       $ export GOPATH=$(pwd)
+2. Clone the repository to it's correct location
 
-3. Run the tests
+       $ git clone http://github.com/gima/jsonv "$GOPATH/src/github.com/gima/jsonv"
+
+3. Navigate to the cloned jsonv repository.
+
+       $ cd "$GOPATH/src/github.com/gima/jsonv"
+
+4. Run the tests:
        
        $ go test ./src/...
+
+5. Install code coverage tool
+
+       $ go get github.com/axw/gocov/gocov
+
+6. Run the code coverage tool
+       
+       $ "$GOPATH/bin/gocov" test ./src/... | "$GOPATH/bin/gocov" report
