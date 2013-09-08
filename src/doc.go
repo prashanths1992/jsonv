@@ -22,6 +22,8 @@ Creating a schema looks like this:
 
 Validation using the schema looks like this:
 
+    // variable `decoded` contains the output of `json.Unmarshal`
+    
     if path, err := schema.Validate(decoded); err == nil {
         log.Println("OK!")
     } else {
