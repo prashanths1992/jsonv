@@ -1,4 +1,4 @@
-## JSON Validation, for `go´
+## JSON Validator, for `go´
 
 Validate data produced by `json.Unmarshal`. Data that is not bound by schema is ignored.
 
