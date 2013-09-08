@@ -1,6 +1,6 @@
 ## JSON Validation, for `go´
 
-Validate data produced by `json.Unmarshal`. Input data outside schema is not validated, and thus passes validation without inspection.
+Validate data produced by `json.Unmarshal`. Data that is not bound by schema is ignored.
 
 **What does it look like?** Creating a schema looks like this:
 

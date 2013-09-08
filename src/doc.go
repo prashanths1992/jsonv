@@ -1,5 +1,5 @@
 /*
-Validate data produced by `json.Unmarshal`. Data given to validation functions, but not found in schema, passes validation without inspection (i.e. is ignored).
+Validate data produced by `json.Unmarshal`. Data that is not bound by schema is ignored.
 
 Creating a schema looks like this:
 
