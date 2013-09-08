@@ -20,6 +20,7 @@ func TestValidator(t *testing.T) {
 func ExampleValidator() {
     // import j "github.com/gima/jsonv/src"
     
+    // set up raw json data
     rawJson := []byte(`
         {
             "status": true,
@@ -41,11 +42,13 @@ func ExampleValidator() {
         }
     `)
     
+    // use go's bundled library to decode json
     decoded := new(interface{})
     if err := json.Unmarshal(rawJson, decoded); err != nil {
         log.Fatal("JSON parsing failed:", err)
     }
     
+    // set up a custom validator function which is used as one of the validators inside the schema
     myValidatorFunc := func(data *interface{}) (desc string, err error) {
         desc = "myValidatorFunc"
         if validate, ok := (*data).(string); !ok {
@@ -57,6 +60,7 @@ func ExampleValidator() {
         return
     }
     
+    // construct the schema which is used to validate data
     schema := &j.Object{Properties:[]j.ObjectItem{
         {"status", &j.Boolean{}},
         {"data", &j.Object{Properties:[]j.ObjectItem{
@@ -74,6 +78,7 @@ func ExampleValidator() {
         }}},
     }}
     
+    // do the actual validation
     if path, err := schema.Validate(decoded); err == nil {
         log.Println("OK!")
     } else {
