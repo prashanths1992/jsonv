@@ -28,6 +28,8 @@ schema := &j.Object{Properties:[]j.ObjectItem{
 Validation using the schema looks like this:
 
 ```go
+// variable `decoded` contains the output of `json.Unmarshal`
+
 if path, err := schema.Validate(decoded); err == nil {
     log.Println("OK!")
 } else {
