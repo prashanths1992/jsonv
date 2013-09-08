@@ -33,5 +33,6 @@ func (self *Number) Validate(data *interface{}) (string, error) {
     if self.Max != 0 {
         if *validate > self.Max { return "Number", fmt.Errorf("should <=%g, was %g", self.Max, *validate) }
     }
+    
     return "Number", nil
 }

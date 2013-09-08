@@ -23,18 +23,4 @@ func (self *Or) Validate(data *interface{}) (outdesc string, err error) {
     } else {
         return "Or", fmt.Errorf("V1:%s. V2:%s", err1, err2)
     }
-    
-    /*
-    var desc string
-    
-    desc, err = self.V1.Validate(data);
-    outdesc = fmt.Sprintf("Or(V1)->%s", desc)
-    if err == nil { return }
-    
-    desc, err = self.V2.Validate(data);
-    outdesc = fmt.Sprintf("Or(V2)->%s", desc)
-    if err == nil { return }
-    
-    return
-    */
 }

@@ -10,7 +10,6 @@ import (
 )
 
 /*
-    $ go test ./src/...
 Ensure that the example passes (log.Fatal kills the process -> test fails)
 */
 func TestValidator(t *testing.T) {
