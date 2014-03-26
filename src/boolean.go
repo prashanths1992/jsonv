@@ -1,22 +1,29 @@
 package jsonv
 
 import (
-    "fmt"
-    "reflect"
+    // "fmt"
+    // "reflect"
 )
 
 /*
 Ensures that the data is boolean.
 */
-type Boolean struct {}
+type Boolean struct {
+}
 
-func (self *Boolean) Validate(data *interface{}) (string, error) {
-    switch (*data).(type) {
+func (self Boolean) Validate(raw interface{}) (path string, err error) {
+    /*path = "Boolean"
+    
+    switch tmp := raw.(type) {
+    case *interface{}:
+        if (tmp != nil) { return self.Validate(*tmp) }
     case bool:
+        return
     case *bool:
-    default:
-        return "Boolean", fmt.Errorf("expected bool, was %v", reflect.TypeOf(*data))
+        if (tmp != nil) { return }
     }
     
+    err = fmt.Errorf("expected bool, was %v", reflect.TypeOf(raw))
+    return*/
     return "Boolean", nil
 }

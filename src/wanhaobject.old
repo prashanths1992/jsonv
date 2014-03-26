@@ -1,0 +1,105 @@
+    //var dtvKeysNotInSchema = every dtv key
+    //loop through self as key
+        //if key.T == string:
+            //ensure validator:[key] validates data:dtv[key]
+            //remove key from dtvKeysNotInSchema
+        //else if key.T == validator, save to validatorKeys
+        //else error
+    //loop through dtvKeysNotInSchema as keyNE
+        //loop through validatorKeys as keyV (jsonv.Object doc prefers only one validator-key):
+            // ensure keyV validates keyNIS && [keyNIS] validates [keyV]
+    
+
+    // ensure schema (self, T=Object) has valid keys and values
+    /*for mapKey, mapValue := range self {
+        switch mapKey.(type) {
+            case string:
+            case Validator:
+            default:
+                return fmt.Sprintf("Object(Schema Property:%v)", mapKey),
+                fmt.Errorf("expected string or Validator, was %v", reflect.TypeOf(mapKey))
+        }
+        
+        if _, ok := mapValue.(Validator); !ok {
+            return fmt.Sprintf("Object(Schema Property:%v Value)", mapKey),
+                fmt.Errorf("expected Validator, was %v", reflect.TypeOf(mapValue))
+        }
+    }
+
+    // switch data-to-be-validated type
+    switch rawType.Kind() {
+    case reflect.Map:
+        // data-to-be-validated is of type Map
+        fmt.Println("IS map")
+        fmt.Println("keytype:", rawType.Key())
+        fmt.Println("elemtype:", rawType.Elem())
+        // loop schema
+        for mapKey, mapValue := range self {
+            switch keyValue := mapKey.(type) {
+            case string:
+            case Validator:
+            default:
+                _ = keyValue
+                return fmt.Sprintf("Object(Map Property:%v)", mapKey), fmt.Errorf("expected string or Validator, was %v", reflect.TypeOf(mapKey))
+            }
+            _ = mapValue
+        }
+    
+    case reflect.Struct:
+        // data-to-be-validated is of type struct
+        fmt.Println("IS struct")
+        
+    default:
+        // data-to-be-validated is of type that cannot be handled
+        return "Object", fmt.Errorf("expected map or struct, was %s", rawType)
+    }
+    
+    return "Object", nil*/
+    
+    
+    /*
+    if unsung, ok := extract(raw, &String{}, &err).(*Object); err != nil || !ok {
+        return reflect.TypeOf(self).Elem().Name(), err
+    } else {
+        return self.validate(unsung)
+    }
+    */
+    
+    /*
+    var validate *map[string]interface{}
+    
+    switch tmp := (*data).(type) {
+    case map[string]interface{}:
+        validate = &tmp
+    case *map[string]interface{}:
+        validate = tmp
+    default:
+        return "Object", fmt.Errorf("expected map[string]interface{}, was %v", reflect.TypeOf(*data))
+    }
+    
+    if self.Each != (ObjectEach{}) {
+        // can do loop without copying?
+        for key, val := range *validate {
+            tmpKey := interface{}(&key)
+            if desc, err := self.Each.KeyValidator.Validate(&tmpKey); err != nil {
+                return fmt.Sprintf(`Object(Each, key("%s"))->%s`, key, desc), err
+            }
+            tmpVal := interface{}(val)
+            if desc, err := self.Each.DataValidator.Validate(&tmpVal); err != nil {
+                return fmt.Sprintf(`Object(Each, key("%s").Value->%s`, key, desc), err
+            }
+        }
+        return "Object(Each)", nil
+    }
+    
+    if self.Properties != nil {
+        // can do loop without copying?
+        for _, proofProperty := range self.Properties {
+            val := interface{}((*validate)[proofProperty.Key])
+            if desc, err := proofProperty.DataValidator.Validate(&val); err != nil {
+                return fmt.Sprintf(`Object(Items, key("%s").Value)->%s`, proofProperty.Key, desc), err
+            }
+        }
+        return "Object(Items)", nil
+    }
+    */

@@ -1,8 +1,8 @@
 package jsonv
 
 import (
-    "fmt"
-    "reflect"
+    // "fmt"
+    // "reflect"
 )
 
 /*
@@ -15,7 +15,8 @@ type Number struct {
     Max float64
 }
 
-func (self *Number) Validate(data *interface{}) (string, error) {
+func (self Number) Validate(data interface{}) (string, error) {
+    /*
     var validate *float64
     
     switch tmp := (*data).(type) {
@@ -33,6 +34,6 @@ func (self *Number) Validate(data *interface{}) (string, error) {
     if self.Max != 0 {
         if *validate > self.Max { return "Number", fmt.Errorf("should <=%g, was %g", self.Max, *validate) }
     }
-    
+    */  
     return "Number", nil
 }

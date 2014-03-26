@@ -1,7 +1,7 @@
 package jsonv
 
 import (
-    "fmt"
+    // "fmt"
 )
 
 /*
@@ -14,13 +14,15 @@ type Or struct {
     V2 Validator
 }
 
-func (self *Or) Validate(data *interface{}) (outdesc string, err error) {
+func (self Or) Validate(data interface{}) (outdesc string, err error) {
     
-    if desc, err1 := self.V1.Validate(data); err1 == nil {
-        return fmt.Sprintf("Or(V1)->%s", desc), nil
-    } else if desc, err2 := self.V2.Validate(data); err2 == nil {
-        return fmt.Sprintf("Or(V2)->%s", desc), nil
-    } else {
-        return "Or", fmt.Errorf("V1:%s. V2:%s", err1, err2)
-    }
+    // if desc, err1 := self.V1.Validate(data); err1 == nil {
+        // return fmt.Sprintf("Or(V1)->%s", desc), nil
+    // } else if desc, err2 := self.V2.Validate(data); err2 == nil {
+        // return fmt.Sprintf("Or(V2)->%s", desc), nil
+    // } else {
+        // return "Or", fmt.Errorf("V1:%s. V2:%s", err1, err2)
+    // }
+    
+    return "Or", nil
 }

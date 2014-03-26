@@ -10,5 +10,5 @@ Return (error): Reason for the failure, if the validation didin't succeed. `nil`
 Note: `Validate` requires `*interface{}` parameter type, because `json.Unmarshal` requires that too. That, and validation is more efficient when passing pointers around, rather than copying data.
 */
 type Validator interface {
-    Validate(*interface{}) (string, error)
+    Validate(interface{}) (string, error)
 }

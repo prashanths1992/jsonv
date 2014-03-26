@@ -1,7 +1,7 @@
 package jsonv
 
 import (
-    "fmt"
+    // "fmt"
 )
 
 /*
@@ -14,15 +14,16 @@ type And struct {
     V2 Validator
 }
 
-func (self *And) Validate(data *interface{}) (string, error) {
+func (self And) Validate(data interface{}) (string, error) {
 
-    if desc, err := self.V1.Validate(data); err != nil {
-        return fmt.Sprintf("And(V1)->%s", desc), err
-    }
+    // if desc, err := self.V1.Validate(data); err != nil {
+        // return fmt.Sprintf("And(V1)->%s", desc), err
+    // }
     
-    if desc, err := self.V2.Validate(data); err != nil {
-        return fmt.Sprintf("And(V2)->%s", desc), err
-    }
+    // if desc, err := self.V2.Validate(data); err != nil {
+        // return fmt.Sprintf("And(V2)->%s", desc), err
+    // }
+    
     
     return "And", nil
 }

@@ -1,3 +1,5 @@
+// +build ignore
+
 package jsonv_test
 
 import (
