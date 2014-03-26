@@ -18,7 +18,7 @@
 
 5. Install code coverage tool
 
-       $ go get github.com/axw/gocov/gocov
+       $ go get github.com/axw/gocov
 
 6. Run the code coverage tool
        
