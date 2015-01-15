@@ -1,7 +1,7 @@
 # Deprecated
 
 jsonv has been replaced with a new version:  
-https://github.com/gima/jsonv2
+https://github.com/gima/govalid
 
 *Why?*  
 *jsonv was one of my early golang projects and I didn't have that much experience with api design. With the new version I believe that I've come closer to a good api as a result of more experience with go. The new version lives in it's own repository, because updating this repository would have broken already-existing code.*
