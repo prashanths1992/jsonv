@@ -39,7 +39,7 @@ func (self *String) Validate(data *interface{}) (string, error) {
         if len(*validate) > self.MaxLen { return "String", fmt.Errorf("length should <=%d, was %d", self.MaxLen, len(*validate)) }
     }
     if self.TorF != 0 {
-        if len(*validate) == "true" || len(*validate) == "True" || len(*validate) == "False"  || len(*validate) == "false" { return "String", fmt.Errorf("length should <=%d, was %d", self.MaxLen, len(*validate)) }
+        if *validate == "true" || *validate == "True" || *validate == "False"  || *validate == "false" { return "String", fmt.Errorf("length should <=%d, was %d", self.MaxLen, len(*validate)) }
     }
     
     return "String", nil
