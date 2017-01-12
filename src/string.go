@@ -14,6 +14,7 @@ type String struct {
     Value string
     MinLen int
     MaxLen int
+    TorF int
 }
 
 func (self *String) Validate(data *interface{}) (string, error) {
@@ -36,6 +37,9 @@ func (self *String) Validate(data *interface{}) (string, error) {
     }
     if self.MaxLen != 0 {
         if len(*validate) > self.MaxLen { return "String", fmt.Errorf("length should <=%d, was %d", self.MaxLen, len(*validate)) }
+    }
+    if self.TorF != 0 {
+        if len(*validate) == "true" || len(*validate) == "True" || len(*validate) == "False"  || len(*validate) == "false" { return "String", fmt.Errorf("length should <=%d, was %d", self.MaxLen, len(*validate)) }
     }
     
     return "String", nil
